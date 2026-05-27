@@ -1,22 +1,100 @@
-# BoomBike
+# BoomBike Demand Prediction
 
-Bike Sharing Assignment
-Problem Statement
-A bike-sharing system is a service in which bikes are made available for shared use to individuals on a short term basis for a price or free. Many bike share systems allow people to borrow a bike from a dock which is usually computer-controlled wherein the user enters the payment information, and the system unlocks it. This bike can then be returned to another dock belonging to the same system.
+## Project Overview
 
-The company wants to know:
+A bike-sharing demand prediction system that forecasts bike rental demand using machine learning regression models. This project analyzes historical bike-sharing data to identify key demand drivers and build predictive models for inventory management.
 
-Which variables are significant in predicting the demand for shared bikes.
-How well those variables describe the bike demands
-Business Goal:
-Required to model the demand for shared bikes with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
+## Business Problem
 
-In the dataset provided, you will notice that there are three columns named casual', 'registered', and 'cnt'. The variable 'casual' indicates the number casual users who have made a rental. The variable 'registered' on the other hand shows the total number of registered users who have made a booking on a given day. Finally, the 'cnt' variable indicates the total number of bike rentals, including both casual and registered. The model should be built taking this cnt' as the target variable.
+A bike-sharing company needs to:
+- Predict shared bike demand accurately
+- Understand which variables significantly impact rental demand
+- Optimize bike distribution and maintenance schedules
+- Improve operational efficiency based on demand patterns
 
-Steps Involved
+## Dataset
 
-Reading,Understanding and Visualising the data
-Preparing the data for modelling (train-test-split, rescaling etc)
-Training the model/Build Model Using Automated + Manual Approach
-Residual Analysis
-Predictions and Evaluation of test set
+- **Source**: Day-level aggregated bike-sharing data
+- **Size**: Daily records with casual, registered, and total users
+- **Variables**: Weather conditions, season, holidays, temperatures, and user types
+- **Key Metrics**:
+  - `casual`: Number of casual user rentals
+  - `registered`: Number of registered user rentals
+  - `cnt`: Total bike rental count (target variable)
+
+See `Data Dictionary.txt` for detailed variable descriptions.
+
+## Project Methodology
+
+### 1. Data Understanding & Visualization
+   - Statistical summary of variables
+   - Distribution analysis
+   - Correlation matrix
+   - Time series visualization
+
+### 2. Data Preparation
+   - Train-test splitting (typically 80/20)
+   - Feature rescaling/normalization
+   - Handling missing values
+   - Outlier detection and treatment
+
+### 3. Model Development
+   - **Approach**: Both automated and manual feature selection
+   - **Algorithms**: Multiple regression models (Linear, Ridge, Lasso, etc.)
+   - **Hyperparameter Tuning**: GridSearchCV for optimization
+
+### 4. Residual Analysis
+   - Residual distribution
+   - Homoscedasticity check
+   - Normality testing
+
+### 5. Model Evaluation
+   - Performance metrics: R² score, RMSE, MAE
+   - Cross-validation scores
+   - Test set predictions
+
+## Installation & Setup
+
+```bash
+# Install required packages
+pip install pandas numpy scikit-learn matplotlib seaborn
+
+# Launch Jupyter
+jupyter notebook "Abhilasha - Bike-Sharing System.ipynb"
+```
+
+## Usage
+
+Execute the notebook cells in order:
+1. Load and explore data
+2. Prepare features for modeling
+3. Train regression models
+4. Analyze residuals
+5. Evaluate on test set
+6. Generate predictions
+
+## Key Findings
+
+[Summary of significant predictors and model performance]
+
+## Model Performance
+
+- Best Model: [Model Name]
+- R² Score (Train): [Value]
+- R² Score (Test): [Value]
+- RMSE: [Value]
+
+## Files
+
+- `day.csv` - Daily bike-sharing data
+- `Abhilasha - Bike-Sharing System.ipynb` - Main analysis notebook
+- `Data Dictionary.txt` - Variable definitions
+- `README.md` - Project documentation
+
+## License
+
+[License Information]
+
+## References
+
+[Any relevant papers or resources]
